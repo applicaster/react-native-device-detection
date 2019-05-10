@@ -14,12 +14,19 @@ class DetectDeviceService {
     this.adjustedWidth = this.width * this.pixelDensity;
     this.adjustedHeight = this.height * this.pixelDensity;
     
-    this.isPhoneOrTablet();
+    this.isPhoneOrTabletOrTv();
     this.isIosOrAndroid();
     this.detectIphoneX();
   }
 
-  isPhoneOrTablet() {
+  isPhoneOrTabletOrTv() {
+    if (Platform.isTV) {
+      this.isTV = true;
+      this.isTablet = false;
+      this.isPhone = false;
+      return;
+    }
+
     // An Android device is considered a tablet if its smallest width >= 600dp (layout-sw600dp) 
     // source: https://developer.android.com/training/multiscreen/screensizes.html#TaskUseSWQuali
     if(Platform.OS === 'android') {
