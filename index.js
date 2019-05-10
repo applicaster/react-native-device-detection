@@ -18,18 +18,22 @@ class DetectDeviceService {
     this.isIosOrAndroid();
     this.detectIphoneX();
   }
-  
+
   isPhoneOrTablet() {
-    if(this.pixelDensity < 2 && (this.adjustedWidth >= 1000 || this.adjustedHeight >= 1000)) {
-      this.isTablet = true;
-      this.isPhone = false;
-    } else if(this.pixelDensity === 2 && (this.adjustedWidth >= 1920 || this.adjustedHeight >= 1920)) {
-      this.isTablet = true;
-      this.isPhone = false;
+    // An Android device is considered a tablet if its smallest width >= 600dp (layout-sw600dp) 
+    // source: https://developer.android.com/training/multiscreen/screensizes.html#TaskUseSWQuali
+    if(Platform.OS === 'android') {
+      this.isTablet = Math.min(this.width, this.height) >= 600;
     } else {
-      this.isTablet = false;
-      this.isPhone = true;
+      if(this.pixelDensity < 2 && (this.adjustedWidth >= 1000 || this.adjustedHeight >= 1000)) {
+        this.isTablet = true;
+      } else if(this.pixelDensity === 2 && (this.adjustedWidth >= 1920 || this.adjustedHeight >= 1920)) {
+        this.isTablet = true;
+      } else {
+        this.isTablet = false;
+      }
     }
+    this.isPhone = !this.isTablet;
   }
   
   isIosOrAndroid() {
