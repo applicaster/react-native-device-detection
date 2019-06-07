@@ -4,7 +4,10 @@ import React, {
   Dimensions
 } from 'react-native';
 
-const windowSize = Dimensions.get('window');
+// NOTE: Screen and window dimensions are different on android 
+// window: reports width/height without the soft menu bar
+// screen: reports entire screen's width/height
+const windowSize = Dimensions.get('screen');
 
 class DetectDeviceService {
   constructor() {
