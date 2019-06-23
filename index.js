@@ -69,4 +69,5 @@ class DetectDeviceService {
   }
 }
 
-module.exports = new DetectDeviceService();
+const detectDeviceService = new DetectDeviceService();
+export default detectDeviceService;
