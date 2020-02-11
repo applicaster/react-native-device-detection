@@ -1,19 +1,19 @@
 {
-  "name": "react-native-device-detection",
-  "version": "0.2.4",
-  "description": "Simple class to let your app figure out what type of device is being used (iOS/Android, Phone/Tablet).",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/m0ngr31/react-native-device-detection.git"
-  },
-  "author": "Joe Ipson",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/m0ngr31/react-native-device-detection/issues"
-  },
-  "homepage": "https://github.com/m0ngr31/react-native-device-detection#readme"
+    "name": "@applicaster/react-native-device-detection",
+    "version": "0.3.0",
+    "description": "Simple class to let your app figure out what type of device is being used (iOS/Android, Phone/Tablet).",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/applicaster/react-native-device-detection.git"
+    },
+    "author": "Joe Ipson",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/applicaster/react-native-device-detection/issues"
+    },
+    "homepage": "https://github.com/applicaster/react-native-device-detection.git#readme"
 }
