@@ -1,6 +1,6 @@
 {
     "name": "@applicaster/react-native-device-detection",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "description": "Simple class to let your app figure out what type of device is being used (iOS/Android, Phone/Tablet).",
     "main": "index.js",
     "scripts": {
